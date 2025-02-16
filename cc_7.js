@@ -37,4 +37,27 @@ const calculateLoyaltyDiscount = (amount, years) => {
 console.log(calculateLoyaltyDiscount(100, 6));
 console.log(calculateLoyaltyDiscount(200, 2));
 
+//Task 4
 
+function calculateShippingCost(weight, location, expedited = false) {
+    let baseCost = 0;
+    let perLbRate = 0;
+
+    if (location === "USA") {
+        baseCost = 5;
+        perLbRate = 0.5;
+    } else if (location === "Canada") {
+        baseCost = 10;
+        perLbRate = 0.7;
+    }
+
+    let totalCost = baseCost + (weight * perLbRate);
+    if (expedited) {
+        totalCost += 10;
+    }
+
+    return `Shipping Cost: $${totalCost.toFixed(2)}`;
+}
+
+console.log(calculateShippingCost(10, "USA", true)); 
+console.log(calculateShippingCost(5, "Canada", false));
