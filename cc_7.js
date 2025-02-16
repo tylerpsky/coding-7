@@ -90,3 +90,13 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();
 console.log(budget(300)); 
 console.log(budget(200)); 
+
+//Task 8
+
+function calculateGrowth(years, revenue) {
+    if (years >= 10) return `Projected Revenue: $${revenue.toFixed(2)}`;
+    return calculateGrowth(years + 1, revenue * 1.05);
+}
+
+console.log(calculateGrowth(8, 1000));
+console.log(calculateGrowth(5, 5000));
