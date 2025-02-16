@@ -79,3 +79,14 @@ let transactions = [500, 1200, 3000, 800, 2200];
 const filterHighValueTransactions = (transactions, filterFunction) => transactions.filter(filterFunction);
 
 console.log(filterHighValueTransactions(transactions, amount => amount > 1000));
+
+//Task 7
+
+function createBudgetTracker() {
+    let balance = 0;
+    return expense => `${balance -= expense}`;
+}
+
+let budget = createBudgetTracker();
+console.log(budget(300)); 
+console.log(budget(200)); 
